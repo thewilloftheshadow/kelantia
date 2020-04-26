@@ -1,6 +1,5 @@
 const re = require(`../resources.js`).data;
 re.client.on("message", async message => {
-  if (message.author.bot) return;
   // message.mentions.members.forEach(member => {
   //     let afk = re.dbs.afk.get(message.guild.id + "." + member.user.id);
   //     if (afk)
@@ -27,7 +26,7 @@ re.client.on("message", async message => {
     }
     let commandfile = re.client.commands.get(command);
     if (!commandfile) return //message.react(re.config.emojis.waitwhat.id)
-
+    if (message.author.bot && !commandfile.help.botcmd) return;
     if (message.author.id === re.config.ownerID){
       message.author.isDev = true;
     }

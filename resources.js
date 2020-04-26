@@ -168,5 +168,6 @@ exports.data = {
   handybag: require("handybag"),
   unb: unb,
   driver: driver,
-  harbormaster: harbormaster
+  harbormaster: harbormaster,
+  moment: require("moment")
 }

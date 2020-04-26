@@ -6,5 +6,6 @@
   "server": "667995345485299712",
   "debug": true,
   "playercat": "668012515325902858",
-  "modules": ["bot", "dev", "gm", "player"]
+  "homecat": "703856398290780211",
+  "modules": ["bot", "player", "gm", "dev"]
 }

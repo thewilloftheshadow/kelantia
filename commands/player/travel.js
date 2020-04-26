@@ -2,12 +2,13 @@ const re = require(`../../resources.js`).data
 module.exports.run = async (client, message, args) => {
   let p = re.dbs.players.get(message.author.id)
   let allchannels = message.guild.channels.cache.filter(c => c.parentID === "667995346026102784")
-  let channels = ["off-island"]
+  let channels = ["off-island", "home"]
   allchannels.forEach(c => channels.push(c.name.toLowerCase()))
   console.log(channels)
   if(!args[0]) return message.channel.send("Please specify a location to travel to!")
   if(!channels.includes(args[0].toLowerCase())) return message.channel.send(`Invalid location!`)
   if(args[0] === "boat" && !message.member.roles.cache.find(r => r.name === "Off-Island")) return message.channel.send("You cannot leave the island!")
+  if(args[0] === "home" && !p.home) return message.channel.send("You do not have a home!")
   if(args[0] === "off-island") return message.channel.send("You cannot leave the island!")
   let locrole = await message.guild.roles.cache.find(r => r.name.toLowerCase() === args[0])
   console.log(locrole)
@@ -16,9 +17,9 @@ module.exports.run = async (client, message, args) => {
     message.member.roles.remove(role).catch(()=>{})
   })
   message.member.roles.add(locrole)
-  let locchan = message.guild.channels.cache.find(c => c.name.toLowerCase() === args[0])
+  let locchan = args[0] === "home" ? message.guild.channels.cache.get(p.home) : message.guild.channels.cache.find(c => c.name.toLowerCase() === args[0])
   locchan.send(`${p.name} has arrived`)
-  message.channel.send(`${p.name} has departed to the ${args[0]}`)
+  message.channel.send(`${p.name} has departed to ${args[0] == "home" ? "their home" : `the ${args[0]}`}`)
 };
 
 module.exports.help = {

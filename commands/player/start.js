@@ -139,5 +139,6 @@ module.exports.help = {
   syntax: re.config.prefix + "start",
   alias: [],
   module: "player",
-  access: { player: false, gm: false, dev: false }
+  access: { player: false, gm: false, dev: false },
+  nohelp: true
 }
