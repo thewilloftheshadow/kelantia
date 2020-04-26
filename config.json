@@ -1,0 +1,10 @@
+{ 
+  "prefix" : ".",
+  "ownerID" : "439223656200273932",
+  "color" : "#2ECC71",
+  "logs" : "668617797789810712",
+  "server": "667995345485299712",
+  "debug": true,
+  "playercat": "668012515325902858",
+  "modules": ["bot", "dev", "gm", "player"]
+}

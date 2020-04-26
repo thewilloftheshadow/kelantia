@@ -1,2 +1,2 @@
-# kelantia
-The bot that manages the Kelantia RPG on Discord
+This bot manages all the things needed for the Island of Kelantia RPG on Discord:
+[https://discord.gg/PCM68Ax](https://discord.gg/PCM68Ax)

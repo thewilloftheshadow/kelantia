@@ -1,0 +1,29 @@
+{
+  "name": "kelantia",
+  "version": "0.0.1",
+  "description": "A discord bot to run the Kelantia RPG",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "express": "^4.17.1",
+    "quick.db": "^7.1.1",
+    "node-cmd": "^3.0.0",
+    "handybag": "latest",
+    "unb-api": "^1.1.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://github.com/thewilloftheshadow/kelantia"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
